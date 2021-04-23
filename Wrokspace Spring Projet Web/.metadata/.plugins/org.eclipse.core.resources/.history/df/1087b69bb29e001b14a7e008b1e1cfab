@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<html lang="en">
+<body>
+    <div>
+        <div>
+            <h1>CONNEXION</h1>
+            Click on this <strong><a href="next">link</a></strong> to visit another page.
+        </div>
+    </div>
+    
+    
+
+<form name="foo" action="/foo/bar" method="post">
+
+	<p>mail</p>
+    <input name="fieldName" type="text" />
+    <p>mdp</p>
+    <input name="fieldAge" type="text" />
+    
+    <input href="next" type="submit" value="Submit">
+<form>
+
+<p> hello 2 ${message2}</p>
+<p> hello 2 ${message3}</p>
+
+
+</body>
+</html>

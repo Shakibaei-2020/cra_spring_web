@@ -1,0 +1,34 @@
+package com.infocom.cra.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.infocom.cra.dao.NoteDeFraisDAO;
+
+
+@Repository
+public class NoteDeFraisAction {
+	
+	@Autowired
+	private NoteDeFraisDAO noteDeFraisDAO;
+	
+	public String saveCollab(NoteDeFrais NoteDeFrais) {
+		NoteDeFrais = noteDeFraisDAO.save(NoteDeFrais);
+		return "AdminGestionCollab";
+	}
+	
+	public List findAllFrais() {
+				 List<NoteDeFrais> listNoteDeFrais = new ArrayList<NoteDeFrais>();
+				 listNoteDeFrais = noteDeFraisDAO.findAll();
+				 
+		return listNoteDeFrais;
+	}
+	
+	public void deleteColl(int fieldId) {
+		collaborateurDAO.deleteById(fieldId); 
+	}
+
+}

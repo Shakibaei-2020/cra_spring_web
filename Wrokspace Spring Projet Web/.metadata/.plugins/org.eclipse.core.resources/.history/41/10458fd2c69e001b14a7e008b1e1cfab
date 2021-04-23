@@ -1,0 +1,31 @@
+package com.infocom.cra.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.infocom.cra.dao.CollaborateurDAO;
+
+@Repository
+public class CollaborateurAction {
+	
+	
+	@Autowired
+	private CollaborateurDAO collaborateurDAO;
+	
+	public String verifCo(String fieldMail, String fieldMdp) {
+		   
+		   Collaborateur coll = collaborateurDAO.findByMail(fieldMail);
+		   String mailColl = coll.getMail();
+		   String mdpColl = coll.getMdp();
+		   boolean typeColl = coll.getType();
+		   		   
+		   if(fieldMail.equals(mailColl) && fieldMdp.equals(mdpColl) && typeColl == false) {
+		        return "AccueilInterne";
+		        
+		   }else if(fieldMail.equals(mailColl) && fieldMdp.equals(mdpColl) && typeColl == true) {
+		        return "AccueilAdmin";			   
+		   }
+		return "home";
+	}
+
+}

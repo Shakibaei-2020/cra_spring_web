@@ -1,0 +1,19 @@
+package com.infocom.cra.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class NoteDeFrais {
+	
+	@Id
+	@GeneratedValue
+	private int id;
+	private String raison;
+	private double prix;
+	private Date date;
+	private int idColl;
+}

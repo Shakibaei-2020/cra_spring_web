@@ -1,0 +1,18 @@
+package com.infocom.cra.dao;
+
+import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+import com.infocom.cra.model.Collaborateur;
+
+/**
+ * 
+ * @author mrshakibaei
+ *
+ */
+public interface CollaborateurDAO extends JpaRepository<Collaborateur,Integer> {
+	
+	Collaborateur findById(int id);
+
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<html lang="en">
+<body>
+ 
+ <p> Accueil interne</p>
+
+
+<p>Ajout Note de Frais</p>
+<form method="post" action="/home/UpdateFrais" method="post">
+
+<input name="fieldId" type="text" value="id" />
+<input name="fieldRaison" type="text" value="raison" />
+<input name="fieldPrix" type="text" value="idPrix" />
+<input name="fieldDate" type="text" value="idDate" />
+<input name="fieldIdColl" type="text" value="idColl" />
+
+<input type="submit" value="ajout"/>
+</form>
+
+
+</body>
+</html>

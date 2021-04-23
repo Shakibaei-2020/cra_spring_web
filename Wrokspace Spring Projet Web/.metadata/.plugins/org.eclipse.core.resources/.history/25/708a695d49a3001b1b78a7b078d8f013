@@ -1,0 +1,99 @@
+package com.infocom.cra.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.infocom.cra.dao.CollaborateurDAO;
+import com.infocom.cra.model.Collaborateur;
+import com.infocom.cra.model.CollaborateurAction;
+
+import io.swagger.annotations.Api;
+
+
+/**
+ * Controller permettant la navigation et le traitement du site
+ * 
+ * @author mrshakibaei
+ *
+ */
+@Api
+@Controller
+@RequestMapping(value="/home")
+public class CollaborateurController {
+	
+	
+	/**
+	 * 
+	 */
+	@Autowired
+	private CollaborateurDAO collaborateurDAO;
+	
+	@Autowired
+	private CollaborateurAction collaborateurAction;
+	
+		/**
+		 * 
+		 * @param model
+		 * @return
+		 */
+	   @RequestMapping("/")
+	    public String home(Map<String, Object> model) {
+			String coll = collaborateurDAO.findById(1).getNom();
+	        model.put("message", coll); 	        
+	        return "Connexion";
+	    }
+	   
+	   /**
+	    * Controller afin d'effectuer la connexion et rediriger l'utilisateur
+	    * 
+	    * @param fieldName
+	    * @param fieldAge
+	    * @return page
+	    */
+	   @RequestMapping("/Accueil")
+	    public String connexionColl(@RequestParam String fieldMail,String fieldMdp) {
+		   String page = collaborateurAction.verifCo(fieldMail, fieldMdp);
+		   return page;
+	    }
+	   	  
+	   /**
+	    * Navigation vers la jsp AdminGestionFrais
+	    * @return "AdminGestionFrais"
+	    */
+	   @RequestMapping("/GestionFrais")
+	    public String goGestionFraisAdmin() {
+		   return "AdminGestionFrais";
+	    }
+	   
+	   /**
+	    * Navigation vers GestionCollab
+	    * @return AdminGestionFrais
+	    */
+	   @RequestMapping("/GestionCollab")
+	    public String goGestionCollabAdmin() {
+		   return "AdminGestionCollab";
+	    }
+	   
+	   
+	   @RequestMapping("/UpdateCo")
+	   public String updateColl(@RequestParam int fieldId, String fieldMail,String fieldMdp,String fieldNom,boolean fieldType) {
+		   
+		   Collaborateur nouvCollaborateur = new Collaborateur(fieldId,fieldMail,fieldMdp,fieldNom,fieldType);
+		   String page = collaborateurAction.saveCollab(nouvCollaborateur);
+		   return page;
+	   }
+
+	   
+	   @RequestMapping("/FindAllColl")
+	   public String findAllColl(Map<String, Object> model) {
+		 List tabColl =  collaborateurAction.findAllCollab();
+		 model.put("tabColl", tabColl);
+		  return "AdminGestionCollab";
+	   }
+
+}

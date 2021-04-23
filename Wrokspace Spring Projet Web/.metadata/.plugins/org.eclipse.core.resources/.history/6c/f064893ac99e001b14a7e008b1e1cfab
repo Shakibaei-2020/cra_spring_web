@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<html lang="en">
+<body>
+ 
+ <center><h2> Accueil Admin</h2></center>
+
+
+<div style="border: solid;">
+<center>
+<h1>Gestions des collaborateurs</h1>
+<form name="home" action="/home/GestionCollab" method="post">
+    <input type="submit" value="Actions Collaborateur">
+        <br>
+            <br>
+<form>
+</center>
+</div>
+
+    <br>
+
+<div style="border: solid;">
+<center>
+<h1>Gestion des notes de frais</h1>
+<form name="home" action="/home/GestionFrais" method="post">
+    <input type="submit" value="Actions note de Frais">
+    <br>
+        <br>
+    
+<form>
+</center>
+</div>
+
+
+</body>
+</html>

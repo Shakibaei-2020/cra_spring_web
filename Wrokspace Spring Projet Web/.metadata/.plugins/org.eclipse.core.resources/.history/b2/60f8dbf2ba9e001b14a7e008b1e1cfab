@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<html lang="en">
+<body>
+   
+        <center><h1>CONNEXION</h1></center>
+            Click on this <strong><a href="next">link</a></strong> to visit another page.
+     
+    
+    
+
+<form name="home" action="/home" method="post">
+
+	<p>mail</p>
+    <input name="fieldMail" type="text" />
+    <p>mdp</p>
+    <input name="fieldMdp" type="text" />
+    
+    <input href="/Connexion" type="submit" value="Submit">
+<form>
+
+<p> hello 2 ${message2}</p>
+<p> hello 2 ${message3}</p>
+
+
+</body>
+</html>

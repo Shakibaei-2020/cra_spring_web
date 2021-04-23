@@ -1,0 +1,10 @@
+package com.infocom.cra.model;
+
+/**
+ * 
+ * @author mrshakibaei
+ *
+ */
+public class Collaborateur {
+
+}

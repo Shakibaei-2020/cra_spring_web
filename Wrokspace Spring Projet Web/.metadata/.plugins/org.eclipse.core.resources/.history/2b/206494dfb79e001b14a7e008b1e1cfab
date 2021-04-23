@@ -1,0 +1,14 @@
+
+/**
+ * Info Table Collaborateur
+ * 
+ * private int id;
+ * private String nom;
+ * private String mail;
+ * private String mdp;
+ * private boolean type; 
+ * 
+ */
+INSERT INTO collaborateur VALUES(1,'test','test@test.fr','test',1);
+INSERT INTO collaborateur VALUES(2,'try','try@try.fr','try',1);
+

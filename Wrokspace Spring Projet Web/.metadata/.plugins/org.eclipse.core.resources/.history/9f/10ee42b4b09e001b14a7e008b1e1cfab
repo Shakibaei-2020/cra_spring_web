@@ -1,0 +1,14 @@
+
+/**
+ * Info Table Collaborateur
+ * 
+ * private int id;
+ * private String nom;
+ * private String mail;
+ * private String mdp;
+ * private boolean type; 
+ * 
+ */
+INSERT INTO product VALUES(1,'Ordinateur',350,800);
+INSERT INTO product VALUES(2,'Aspirateur',90,300);
+INSERT INTO product VALUES(3,'Four',400,800);

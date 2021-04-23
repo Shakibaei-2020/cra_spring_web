@@ -1,0 +1,12 @@
+/**
+ * Info Table NoteDeFrais
+ * 
+  	private int id;
+	private String raison;
+	private double prix;
+	private Date date;
+	private int idColl;
+ */
+
+INSERT INTO NoteDeFrais VALUES(1,'raison1',55,'14-02-2000',2);
+INSERT INTO NoteDeFrais VALUES(2,'raison2',60,'14-02-2000',1);

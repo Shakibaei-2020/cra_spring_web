@@ -1,0 +1,32 @@
+package com.infocom.cra.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.infocom.cra.model.NoteDeFrais;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+/**
+ * 
+ * @author mrshakibaei
+ *
+ */
+@Repository
+public interface NoteDeFraisDAO extends JpaRepository<NoteDeFrais,Integer> {
+
+	
+	/**
+	 * 
+	 * @param id
+	 * @return NoteDeFrais
+	 */
+	NoteDeFrais  findById(int id);
+	
+	/**
+	 * 
+	 * @param id
+	 * @return NoteDeFrais
+	 */
+	NoteDeFrais deleteById(int id);
+}

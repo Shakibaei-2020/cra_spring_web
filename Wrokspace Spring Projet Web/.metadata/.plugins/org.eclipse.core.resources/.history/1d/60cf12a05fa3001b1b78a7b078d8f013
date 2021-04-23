@@ -1,0 +1,16 @@
+
+/**
+ * Info Table Collaborateur
+ * 
+		this.id = id;
+		this.mail = mail;
+		this.mdp = mdp;
+		this.nom = nom;
+		this.type = type;
+ * 
+ */
+INSERT INTO Collaborateur VALUES(1,'test@test.fr','test','test',1);
+INSERT INTO Collaborateur VALUES(2,'try@try.fr','try','try',0);
+
+INSERT INTO NoteDeFrais VALUES(1,'raison1',55,'14-02-2000',2);
+INSERT INTO NoteDeFrais VALUES(2,'raison2',60,'14-02-2000',1);

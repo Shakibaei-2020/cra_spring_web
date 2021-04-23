@@ -1,0 +1,40 @@
+package com.infocom.cra.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.infocom.cra.dao.NoteDeFraisDAO;
+import com.infocom.cra.model.NoteDeFraisAction;
+
+import io.swagger.annotations.Api;
+
+@Api
+@Controller
+@RequestMapping(value="/home2")
+public class NoteDeFraisController {
+	
+	@Autowired
+	private NoteDeFraisDAO noteDeFraisDAO;
+	
+	@Autowired
+	private NoteDeFraisAction NoteDeFraisAction;
+	
+	   @RequestMapping("/DeleteCo")
+	   public String deleteColl(Map<String, Object> model,@RequestParam int fieldId) {
+		   
+		   NoteDeFraisAction.deleteFrais(fieldId);
+		   
+		List tabColl =  NoteDeFraisAction.findAllFrais();
+		model.put("tabFrais", tabFrais);
+		   
+		return "AdminGestionCollab";
+		   
+	   }
+
+
+}

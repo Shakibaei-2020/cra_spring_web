@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<html lang="en">
+<body>
+   
+        <center><h1>CONNEXION</h1>
+
+<form name="home" action="/home/Accueil" method="post">
+
+	<p>mail</p>
+    <input name="fieldMail" type="text" />
+    <p>mdp</p>
+    <input name="fieldMdp" type="text" />
+    
+    <input type="submit" value="Submit">
+<form>
+</center>
+</body>
+</html>

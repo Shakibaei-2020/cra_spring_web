@@ -1,0 +1,77 @@
+package com.infocom.cra.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.infocom.cra.dao.CollaborateurDAO;
+import com.infocom.cra.model.Collaborateur;
+import com.infocom.cra.model.CollaborateurAction;
+
+import io.swagger.annotations.Api;
+
+
+/**
+ * Controller permettant la navigation et le traitement du site
+ * 
+ * @author mrshakibaei
+ *
+ */
+@Api
+@Controller
+@RequestMapping(value="/home")
+public class CollaborateurController {
+	
+	
+	/**
+	 * 
+	 */
+	@Autowired
+	private CollaborateurDAO collaborateurDAO;
+	
+	@Autowired
+	private CollaborateurAction collaborateurAction;
+	
+		/**
+		 * 
+		 * @param model
+		 * @return
+		 */
+	   @RequestMapping("/")
+	    public String home(Map<String, Object> model) {
+			String coll = collaborateurDAO.findById(1).getNom();
+	        model.put("message", coll); 	        
+	        return "Connexion";
+	    }
+	   
+	   /**
+	    * Controller afin d'effectuer la connexion et rediriger l'utilisateur
+	    * 
+	    * @param fieldName
+	    * @param fieldAge
+	    * @return page
+	    */
+	   @RequestMapping("/Accueil")
+	    public String testAction(@RequestParam String fieldMail,String fieldMdp) {
+		   String page = collaborateurAction.verifCo(fieldMail, fieldMdp);
+		   return page;
+	    }
+	   	  
+	   @RequestMapping("/GestionFrais")
+	    public String goGestionFraisAdmin() {
+		   String page = collaborateurAction.verifCo(fieldMail, fieldMdp);
+		   return page;
+	    }
+	   
+	   @RequestMapping("/GestionCollab")
+	    public String goGestionCollabAdmin() {
+		   String page = collaborateurAction.verifCo(fieldMail, fieldMdp);
+		   return page;
+	    }
+	   
+
+
+}

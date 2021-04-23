@@ -1,0 +1,26 @@
+
+/**
+ * Info Table Collaborateur
+ * 
+	private int id;
+	private String nom;
+	private String mail;
+	private String mdp;
+	private boolean type;
+ * 
+ */
+INSERT INTO Collaborateur VALUES(1,'test@test.fr','test','test',1);
+INSERT INTO Collaborateur VALUES(2,'try@try.fr','try','try',0);
+
+/**
+ * Info Table NoteDeFrais
+ * 
+  	private int id;
+	private String raison;
+	private double prix;
+	private Date date;
+	private int idColl;
+ */
+
+INSERT INTO NoteDeFrais VALUES(1,'raison1',55,'14-02-2000',2);
+INSERT INTO NoteDeFrais VALUES(2,'raison2',60,'14-02-2000',1);

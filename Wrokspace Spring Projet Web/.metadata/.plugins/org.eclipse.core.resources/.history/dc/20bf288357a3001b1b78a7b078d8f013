@@ -1,0 +1,23 @@
+package com.infocom.cra.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.infocom.cra.dao.NoteDeFraisDAO;
+import com.infocom.cra.model.NoteDeFraisAction;
+
+import io.swagger.annotations.Api;
+
+@Api
+@Controller
+@RequestMapping(value="/home2")
+public class NoteDeFraisController {
+	
+	@Autowired
+	private NoteDeFraisDAO noteDeFraisDAO;
+	
+	@Autowired
+	private NoteDeFraisAction NoteDeFraisAction;
+
+}

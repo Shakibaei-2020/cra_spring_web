@@ -1,0 +1,23 @@
+package com.infocom.cra.dao;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.infocom.cra.model.Collaborateur;
+
+/**
+ *Ici les fonctions principales pour l'exploitation de la base de données
+ * 
+ * @author mrshakibaei
+ *
+ */
+@Repository
+public interface CollaborateurDAO extends JpaRepository<Collaborateur,Integer> {
+	
+	Collaborateur findById(int id);
+	
+	Collaborateur findByMail(String fieldMail);
+		
+	Collaborateur deleteById(int id);
+	
+}
